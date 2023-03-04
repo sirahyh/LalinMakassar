@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diskominfo</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+  <!-- My CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Vendor CSS Files
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+
+  <!-- Fontawesome -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+
+  <!-- Datepicker -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Favicons -->
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" style="background-color: #ffffff;">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/diskominfo.png" alt="Logo" width="100" height="30" class="d-inline-block align-text-top">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="berita.html">Berita</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CCTV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profil.html">Profil</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Akhir Navbar -->
+
+  <!-- Jumbotron -->
+  <section class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4">Statistik <span>Lalu Lintas</span> <br> <span>Kota</span> Makassar</h1>
+          <p class="lead">Publikasi Statistik Lalu Lintas menyajikan data mengenai keadaan lalu lintas transportasi
+            darat di seluruh wilayah Kota Makassar yang bersumber dari hasil pantauan CCTV milik Kominfo.</p>
+        </div>
+        <div class="col">
+          <img src="img/Group 12.png" width="600" class="rounded float-end" alt="...">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Akhir Jumbotron -->
+
+  <!-- Data -->
+  <section id="data">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card text-center mb-2">
+            <div class="card-body">
+              <h5 class="card-title">Kemacetan</h5>
+              <!-- <div class="preloader-kemacetan" id="preloader">
+                  <img src="img/loader.gif" alt="loading">
+                </div> -->
+              <h1 class="card-text text-danger" id="jumlahMacet"></h1>
+              <div class="input-group date" id="datepicker">
+                <div class="col-7">
+                  <input type="text" class="form-control text-end" width="50%" placeholder="Pilih Tanggal" id="dateid">
+                </div>
+                <span class="input-group-append">
+                  <span class="input-group-text bg-white">
+                    <i class="fa fa-calendar" id="pilihtanggal"></i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card text-center mb-2">
+            <div class="card-body">
+              <h5 class="card-title">Kecelakaan</h5>
+              <h1 class="card-text text-warning">0</h1>
+              <div class="input-group date" id="datepicker">
+                <div class="col-7">
+                  <input type="text" class="form-control text-end" width="50%" placeholder="Hari Ini">
+                </div>
+                <span class="input-group-append">
+                  <span class="input-group-text bg-white">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card text-center mb-2">
+            <div class="card-body">
+              <h5 class="card-title">Demonstrasi</h5>
+              <h1 class="card-text text-success">0</h1>
+              <div class="input-group date" id="datepicker">
+                <div class="col-7">
+                  <input type="text" class="form-control text-end" width="50%" placeholder="Hari Ini">
+                </div>
+                <span class="input-group-append">
+                  <span class="input-group-text bg-white">
+                    <i class="fa fa-calendar" id="pilihtanggal"></i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card text-center mb-2">
+            <div class="card-body">
+              <h5 class="card-title">Kerusuhan</h5>
+              <h1 class="card-text" style="color: #7466A5">0</h1>
+              <div class="input-group date" id="datepicker">
+                <div class="col-7">
+                  <input type="text" class="form-control text-end" width="50%" placeholder="Hari Ini">
+                </div>
+                <span class="input-group-append">
+                  <span class="input-group-text bg-white">
+                    <i class="fa fa-calendar" id="pilihtanggal"></i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card text-center mb-2">
+            <div class="card-body">
+              <h5 class="card-title">Anak Jalanan</h5>
+              <h1 class="card-text" style="color: #0074E9">0</h1>
+              <div class="input-group date" id="datepicker">
+                <div class="col-7">
+                  <input type="text" class="form-control text-end" width="50%" placeholder="Hari Ini">
+                </div>
+                <span class="input-group-append">
+                  <span class="input-group-text bg-white">
+                    <i class="fa fa-calendar" id="pilihtanggal"></i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Akhir Data -->
+
+  <!-- dropdown -->
+  <section id="dropdown">
+    <div class="container">
+      <div class="dropdown">
+        <button class="btndropdown btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Kemacetan
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Demonstrasi</a>
+          <a class="dropdown-item" href="#">Kecelakaan</a>
+          <a class="dropdown-item" href="#">Kerusuhan</a>
+          <a class="dropdown-item" href="#">Anak Jalanan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Akhir dropdown -->
+
+  <!-- <div id="inicoba" class="card">
+      <button id="inibuttonpekan">pekan</button>
+    </div> -->
+
+  <!-- maps -->
+  <section id="maps">
+    <div class="container">
+      <div class="card">
+        <div class="row">
+          <div class="col-md-3 ms-5 mt-4 container">
+            <div class="row">
+              <h4>Search Bar</h4>
+            </div>
+            <div class="row">
+              <ol class="list-group list-group-numbered">
+                <button value="abdul kadir" id="grafikAbdKadir" class="list-kota">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Abdul Kadir</div>
+                    </div>
+                  </li>
+                </button>
+                <button value="adhyaksa" id="grafikAdhyaksa" class="list-kota">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Adhyaksa</div>
+                    </div>
+                  </li>
+                </button>
+                <button value="alauddin" id="grafikAlauddin" class="list-kota">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Alauddin</div>
+                    </div>
+                  </li>
+                </button>
+                <button value="amirullah" id="grafikAmirullah" class="list-kota">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Amirullah</div>
+                    </div>
+                  </li>
+                </button>
+                <button value="bajigau" id="grafikBajigau" class="list-kota">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Baji Gau</div>
+                    </div>
+                  </li>
+                </button>
+                <button value="barukang" id="grafikBarukanga" class="list-kota">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Barukang</div>
+                    </div>
+                  </li>
+                </button>
+                <button value="cakalangpanampu" id="grafikCakalangPanampu" class="list-kota">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Cakalang Panampu</div>
+                    </div>
+                  </li>
+                </button>
+                <button value="flyover" id="grafikflyover" class="list-kota">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Flyover</div>
+                    </div>
+                  </li>
+                </button>
+                <button value="kajaolaliddo" id="grafikKajaolaliddo" class="list-kota">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Kajaolaliddo</div>
+                    </div>
+                  </li>
+                </button>
+                <button value="tatahaji" id="grafikTataHaji" class="list-kota">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Dg. Tata RS. Haji</div>
+                    </div>
+                  </li>
+                </button>
+              </ol>
+            </div>
+          </div>
+          <div class="col-md-8 mt-4 judul-statistik container">
+            <div class="row">
+              <h4>Statistik Kemacetan</h4>
+            </div>
+            <div class="row">
+              <div class="col-md opsi-grafik" id="satuhari">
+                <button class="btn">1H</button>
+              </div>
+              <div class="col-md opsi-grafik" id="pekan">
+                <button class="btn" id="inibuttonpekan">1P</button>
+              </div>
+              <div class="col-md opsi-grafik" id="bulan">
+                <button class="btn" type="submit">1B</button>
+              </div>
+              <div class="col-md opsi-grafik">
+                <input class="btn" type="button" value="2B" id="duabulan">
+              </div>
+              <div class="col-md opsi-grafik">
+                <input class="btn" type="submit" value="3B" id="tigabulan">
+              </div>
+              <div class="col-md opsi-grafik">
+                <input class="btn" type="reset" value="4B" id="empatbulan">
+              </div>
+            </div>
+            <div class="row">
+              <h3 class="judul2">Periode : <span id="periode"></span></h3>
+            </div>
+            <div class="row">
+              <div class="preloader" id="preloader">
+                <img src="img/loader.gif" alt="loading">
+              </div>
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row text-center">
+          <div class="maps mb-4 mt-4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.738935658912!2d119.43781550000001!3d-5.145667799999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee2b42e641d13%3A0x91a721bd23335935!2sDinas%20Kominfo%20Kota%20Makassar!5e0!3m2!1sid!2sid!4v1666668487985!5m2!1sid!2sid"
+              width="95%" height="450" class="rounded-4" mb-2 allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- akhir maps -->
+
+  <!-- Footer -->
+  <footer id="footer">
+
+    <div class="container footer-bottom clearfix">
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-2 text-end">
+            <img src="img/favicon-makassar.png" alt="Logo" width="100" height="100"
+              class="d-inline-block align-text-top">
+          </div>
+
+          <div class="col-6 footer-contact">
+            <p>
+              Pemerintah Kota Makassar <br>
+              <strong> Dinas Komunikasi dan Informatika </strong><br>
+              Jl. Andi Pangerang Pettarani<br>
+              Makassar 90232 <br>
+              kominfo@makassar.go.id<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <p>Ikuti kami:</p>
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="copyright text-end">
+          &copy; Copyright <strong><span>DiskominfoMks</span></strong>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!-- Akhir Footer -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+
+
+  <script>
+    $('#dateid').datepicker({
+      autoclose: true,
+      format: 'dd/mm/yyyy',
+      todayHighlight: true,
+      defaultViewDate: new Date()
+    })
+
+      // var datelist = $("#dateid").value();
+      // let nama = "hello world"
+      // document.getElementById("inicoba").innerHTML = datelist
+
+      //let tanggal = document.getElementById('dateid');
+  </script>
+
+  <script src="grafik.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+
+  <!-- <script src="main.js"></script>
+    <script src="bar.js"></script> -->
+
+</body>
+
+</html>
